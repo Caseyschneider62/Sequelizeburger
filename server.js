@@ -7,6 +7,8 @@ var app = express();
 
 var PORT = process.env.PORT || 8090;
 
+var db = require("./models");
+
 app.use(bodyParser.urlencoded({extended: false}));
  
 // override with POST having ?_method=DELETE
