@@ -1,0 +1,2 @@
+# Sequelizeburger
+Sequelize app
