@@ -1,21 +1,47 @@
 module.exports = function(sequelize, DataTypes) {
-  var Burgers = sequelize.define("Burgers", {
-    text: {
-      type: DataTypes.STRING,
-      // AllowNull is a flag that restricts a todo from being entered if it doesn't
-      // have a text value
-      allowNull: false,
-      // len is a validation that checks that our todo is between 1 and 140 characters
-      validate: {
-        len: [1, 140]
-      }
-    },
-    complete: {
+  var Burger = sequelize.define("Burger", {
+    burger_name: DataTypes.STRING,
+    devoured: {
       type: DataTypes.BOOLEAN,
-      // defaultValue is a flag that defaults a new todos complete value to false if
-      // it isn't supplied one
       defaultValue: false
     }
+  }, {
+    classMethods: {
+      associate: function(models) {
+
+      }
+    }
   });
-  return Burgers;
+  return Burger;
 };
+
+
+
+
+
+
+
+
+
+
+// module.exports = function(sequelize, DataTypes) {
+//   var Burger = sequelize.define("Burger", {
+//     text: {
+//       type: DataTypes.STRING,
+//       // AllowNull is a flag that restricts a todo from being entered if it doesn't
+//       // have a text value
+//       allowNull: false,
+//       // len is a validation that checks that our todo is between 1 and 140 characters
+//       validate: {
+//         len: [1, 140]
+//       }
+//     },
+//     complete: {
+//       type: DataTypes.BOOLEAN,
+//       // defaultValue is a flag that defaults a new todos complete value to false if
+//       // it isn't supplied one
+//       defaultValue: false
+//     }
+//   });
+//   return Burger;
+// };
